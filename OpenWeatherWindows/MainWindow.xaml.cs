@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace OpenWeatherWindows
 {
@@ -14,7 +15,7 @@ namespace OpenWeatherWindows
     {
         private string lat;
         private string lon;
-        private string apiKey;
+        private string apiKey; //https://home.openweathermap.org/api_keys
 
         private const float celsius = 273.15f;
 
@@ -26,6 +27,18 @@ namespace OpenWeatherWindows
 
             SetProfile(OpenProfile(path));
 
+            OutputText();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(Tick);
+            timer.Interval = new TimeSpan(0, 30, 0);
+            timer.Start();
+        }
+
+        private void Tick(object? sender, EventArgs e) => OutputText();
+
+        private void OutputText()
+        {
             var weather = GetWeather();
 
             temp.Text = $"{Math.Round((decimal)(weather.temp - celsius))}";
