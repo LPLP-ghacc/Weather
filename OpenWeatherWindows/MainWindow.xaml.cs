@@ -7,9 +7,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Device.Location;
-using Microsoft.Win32;
-using System.Windows.Markup;
 
 namespace OpenWeatherWindows
 {
@@ -118,7 +115,7 @@ namespace OpenWeatherWindows
 
         private void SetProfile(Profile? profile)
         {
-            if(profile != null)
+            if (profile != null)
             {
                 lat = profile.lat;
                 lon = profile.lon;
@@ -127,7 +124,7 @@ namespace OpenWeatherWindows
         }
 
         public Profile OpenProfile(string path)
-        {            
+        {
             dynamic? data = JsonConvert.DeserializeObject(File.ReadAllText(path));
 
             return new Profile((string)data.lat, (string)data.lon, (string)data.key);
