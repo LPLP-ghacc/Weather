@@ -44,7 +44,7 @@ namespace OpenWeatherWindows
             temp.Text = $"{Math.Round((decimal)(weather.temp - celsius))}";
             feelsLike.Text = $"FEELS LIKE: {Math.Round((decimal)(weather.feels_like - celsius))}";
             humiditytb.Text = $"HUMIDITY: {weather.humidity}";
-            windspeed.Text = $"WIND SPEED: {weather.speed} m/s";
+            windspeed.Text = $"WIND SPEED: {weather.speed} m/s"; 
             clouds_all.Text = $"CLOUDINESS: {weather.all}%";
         }
 
