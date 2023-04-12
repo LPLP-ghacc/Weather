@@ -46,6 +46,7 @@ namespace OpenWeatherWindows
             humiditytb.Text = $"HUMIDITY: {weather.humidity}";
             windspeed.Text = $"WIND SPEED: {weather.speed} m/s"; 
             clouds_all.Text = $"CLOUDINESS: {weather.all}%";
+            WeatherStatusTextBox.Text = $"{weather.description?.ToUpper()}";
         }
 
         private Weather GetWeather()
