@@ -11,7 +11,8 @@
         ResizeMode="NoResize" 
         WindowStyle="None" 
         AllowsTransparency="True"
-        WindowStartupLocation="Manual" MouseDown="Window_MouseDown">
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
 
     <Border CornerRadius="35" BorderThickness="1" Background="#FF424242">
         <Border.BorderBrush>
@@ -35,8 +36,20 @@
             <TextBlock x:Name="windspeed" HorizontalAlignment="Left" Margin="159,62,0,0" TextWrapping="Wrap" Text="wind.speed" VerticalAlignment="Top" Width="157" FontFamily="Arial Black" Foreground="White"/>
             <TextBlock x:Name="clouds_all" HorizontalAlignment="Left" Margin="159,81,0,0" TextWrapping="Wrap" Text="Cloudiness" VerticalAlignment="Top" Width="157" FontFamily="Arial Black" Foreground="White"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="128,70,0,0" TextWrapping="Wrap" Text="°C" VerticalAlignment="Top" Foreground="White" FontFamily="Arial Black"/>
-            <Ellipse x:Name="exitEllipse" HorizontalAlignment="Left" Height="25" Margin="327,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" Fill="#FFA50000" MouseMove="exitEllipse_MouseMove" MouseLeave="exitEllipse_MouseLeave" MouseDown="exitEllipse_MouseDown"/>
-            <TextBlock x:Name="WeatherStatusTextBox" HorizontalAlignment="Left" Margin="14,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontFamily="Arial Black" Foreground="White" FontSize="11"/>
+            <Ellipse x:Name="exitEllipse" HorizontalAlignment="Left" Height="25" Margin="327,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" Fill="#FFA50000" MouseMove="exitEllipse_MouseMove" MouseLeave="exitEllipse_MouseLeave" MouseDown="exitEllipse_MouseDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="5" Opacity="0.225" ShadowDepth="4"/>
+                </Ellipse.Effect>
+            </Ellipse>
+            <TextBlock x:Name="WeatherStatusTextBox" HorizontalAlignment="Left" Margin="14,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" FontFamily="Arial Black" Foreground="White" FontSize="11" Text="WEATHER STATUS"/>
+            <Ellipse x:Name="MoreInformationButton" HorizontalAlignment="Left" Height="25" Margin="327,40,0,0" VerticalAlignment="Top" Width="25" MouseDown="MoreInformationButton_MouseDown">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/Images/moreinformation.png" Stretch="Fill" TileMode="None"/>
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="5" Opacity="0.225" ShadowDepth="4"/>
+                </Ellipse.Effect>
+            </Ellipse>
         </Grid>
     </Border>
 </Window>

@@ -17,7 +17,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\moreinformation.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="C:\Users\alpha\source\repos\OpenWeatherWindows\OpenWeatherWindows\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\moreinformation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
