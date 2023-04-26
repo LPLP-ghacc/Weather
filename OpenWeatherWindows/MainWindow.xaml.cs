@@ -30,6 +30,8 @@ namespace OpenWeatherWindows
             timer.Tick += new EventHandler(Tick);
             timer.Interval = new TimeSpan(0, 30, 0);
             timer.Start();
+
+            //code 
         }
 
         private void Tick(object? sender, EventArgs e) => OutputText();
