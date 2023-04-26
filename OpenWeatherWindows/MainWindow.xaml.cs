@@ -32,6 +32,7 @@ namespace OpenWeatherWindows
             timer.Start();
 
             //code 
+            //изменения из браузера
         }
 
         private void Tick(object? sender, EventArgs e) => OutputText();
